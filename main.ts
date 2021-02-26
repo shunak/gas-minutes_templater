@@ -1,5 +1,5 @@
 // Folder ID which is folder where you wanna copy minutes in
-const FOLDER_ID = "1iGCQnKMxzwmknmih0agkH9rCWOq3UvY1";
+const FOLDER_ID = "Folder ID which is folder where you wanna copy minutes in";
 function copy(): GoogleAppsScript.Drive.File {
   // Direct the folder which original file exists
   const folder: GoogleAppsScript.Drive.Folder = DriveApp.getFolderById(
