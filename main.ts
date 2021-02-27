@@ -31,7 +31,11 @@ function send(url: string): void {
   Logger.log(SLACK_WEBHOOK_URL);
   const text: string = `今日の議事録はこちらに${url}`;
 
-  const data = {
+  const data: {
+    username: string;
+    icon_emoji: string;
+    text: string;
+  } = {
     username: "minutes auto templater",
     icon_emoji: ":bookmark_tabs:",
     text,
@@ -43,7 +47,7 @@ function send(url: string): void {
     payload: JSON.stringify(data),
   };
 
-  var response = UrlFetchApp.fetch(SLACK_WEBHOOK_URL, params);
+  let response = UrlFetchApp.fetch(SLACK_WEBHOOK_URL, params);
   Logger.log("response code = " + response.getResponseCode()); //400が返るはず
   Logger.log("response body = " + response.getContentText()); //エラーの原因が返るはず
 }
